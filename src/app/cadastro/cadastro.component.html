@@ -1,0 +1,50 @@
+<div class="container">
+    <mat-card class="card">
+      <form [formGroup]="formGroup" class="cadastro-form">
+        <mat-form-field>
+          <mat-label>Nome</mat-label>
+          <input matInput type="text" formControlName="first_name">
+          <mat-error *ngIf="formGroup.get('first_name')?.invalid && formGroup.get('first_name')?.touched">
+            Campo obrigatório
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Sobrenome</mat-label>
+            <input matInput type="text" formControlName="last_name">
+            <mat-error *ngIf="formGroup.get('last_name')?.invalid && formGroup.get('last_name')?.touched">
+              Campo obrigatório
+            </mat-error>
+          </mat-form-field>
+        
+        <mat-form-field>
+          <mat-label>Data de nascimento</mat-label>
+          <input matInput type="data_nascimento" formControlName="data_nascimento">
+          <mat-error *ngIf="formGroup.get('data_nascimento')?.invalid && formGroup.get('data_nascimento')?.touched">
+            Campo obrigatório
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>CPF</mat-label>
+            <input matInput type="cpf" formControlName="cpf">
+            <mat-error *ngIf="formGroup.get('cpf')?.invalid && formGroup.get('cpf')?.touched">
+              Campo obrigatório
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>RG</mat-label>
+            <input matInput type="rg" formControlName="rg">
+            <mat-error *ngIf="formGroup.get('rg')?.invalid && formGroup.get('rg')?.touched">
+              Campo obrigatório
+            </mat-error>
+          </mat-form-field>
+        
+        <section class="buttons">
+          <button mat-raised-button disabled [disabled]="formGroup.invalid" (click)="salvar()">Salvar</button>
+        </section>
+      </form>
+    </mat-card>
+  </div>
+  
