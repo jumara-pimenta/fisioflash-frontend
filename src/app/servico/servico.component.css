@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  justify-content: flex-start; /* Move o card para o topo */
+  justify-content: center; /* Move o card para o topo */
   align-items: center;
   background-color: rgba(224, 232, 235, 0.8);
   padding-top: 10px; /* Ajuste o valor para o espaçamento desejado do topo */
@@ -29,4 +29,5 @@
 .card mat-card-content button {
   width: 100%;
   margin-bottom: 10px;
+  color:#000;
 }

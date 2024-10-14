@@ -75,6 +75,11 @@ export class CadastroComponent implements OnInit {
     this.hidePassword = !this.hidePassword;
   }
 
+  cancelar() {
+    this.formGroup.reset(); 
+    this.selectedFile = null;
+  }
+
   salvar() {
     const formData = new FormData();
     

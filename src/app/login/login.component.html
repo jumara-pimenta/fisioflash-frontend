@@ -22,5 +22,9 @@
         <button mat-raised-button disabled [disabled]="formGroup.invalid" (click)="login()">Entrar</button>
       </section>
     </form>
+
+    <p class="redirect-message">
+      Não é cadastrado? <a routerLink="/cadastro">Clique aqui</a>
+    </p>
   </mat-card>
 </div>

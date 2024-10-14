@@ -26,3 +26,19 @@
   flex-direction: row;
   justify-content: center;
 }
+
+.redirect-message {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.redirect-message a {
+  color: #021c1d;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.redirect-message a:hover {
+  color: #d6e3e4;
+}
