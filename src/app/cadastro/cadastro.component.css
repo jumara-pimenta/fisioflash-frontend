@@ -4,12 +4,13 @@
     height: 100vh;
     justify-content: center;
     align-items: center;
+    background-color: rgba(224, 232, 235, 0.8);
   }
   
   .card {
     display: flex;
     flex-direction: column;
-    max-width: 500px;
+    max-width: 900px;
     padding: 2rem;
     background-color: #40aab2;
   }
@@ -19,10 +20,81 @@
     flex-direction: column;
     padding: 20px;
   }
+
+  .cadastro-form .btn-custom {
+    color: #000;
+    transition: color 0.3s ease;
+  }
+
+  .cadastro-form .btn-custom:hover {
+    background-color: #388e99;
+  }
+  
+  .form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .curriculo {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    padding-bottom: 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .custom-file-label {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #ebe9f3;
+    color: #000;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  mat-form-field {
+    flex: 1;
+  }
+
+  .custom-file-label:hover {
+    background-color: #388e99;
+  }
+  
+  /* Ocultando o input de arquivo real */
+  .custom-file-input {
+    display: none;
+  }
+
+  .file-name {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #333;
+ }  
   
   .buttons {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
+  }
+
+  .success-snackbar {
+    background-color: #4caf50;
+    color: #fff;
+  }
+  
+  .error-snackbar {
+    background-color: #f44336;
+    color: #fff;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .form-row {
+      flex-direction: column;
+    }
   }
   

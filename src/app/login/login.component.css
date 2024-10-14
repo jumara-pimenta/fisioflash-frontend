@@ -4,6 +4,7 @@
   height: 100vh;
   justify-content: center;
   align-items: center;
+  background-color: rgba(224, 232, 235, 0.8);
 }
 
 .card {

@@ -7,7 +7,8 @@ import { HttpHeaders } from '@angular/common/http';
   providedIn: 'root',
 })
 export class AuthService {
-  private apiUrl = 'http://127.0.0.1:8000/api/token/';  
+  private apiUrl = 'http://127.0.0.1:8000/api/token/'; 
+  private cadastroUrl = 'http://127.0.0.1:8000/api/fisioflash/clinica/usuario/'
 
   constructor(private http: HttpClient) {}
 
@@ -20,5 +21,9 @@ export class AuthService {
     const headers = new HttpHeaders().set('Authorization', `Token ${token}`);
     return this.http.get('http://127.0.0.1:8000/api/protected-endpoint/', { headers });
   }
-  
+
+  registerUser(formData: FormData): Observable<any> {
+    return this.http.post(this.cadastroUrl, formData);
+  }
+
 }

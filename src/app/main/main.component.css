@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 92vh;
+    background-color: rgba(224, 232, 235, 0.8);
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: row;  
+    justify-content: space-between; 
+    gap: 20px; 
+  }
+  
+  .section {
+    flex: 1; 
+  }
+  
+  .container mat-card-title {
+    color: #40aab2;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .mat-card-content {
+    background-color: rgba(224, 232, 235, 0.8);
+  }
+
+  .button {
+    background-color: #40aab2;
+    color: #fff;
+  }
+
+  .button:hover {
+    background-color: #fff;
+    color: #40aab2;
+  }
+  

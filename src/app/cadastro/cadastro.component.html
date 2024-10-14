@@ -1,48 +1,160 @@
 <div class="container">
     <mat-card class="card">
       <form [formGroup]="formGroup" class="cadastro-form">
-        <mat-form-field>
-          <mat-label>Nome</mat-label>
-          <input matInput type="text" formControlName="first_name">
-          <mat-error *ngIf="formGroup.get('first_name')?.invalid && formGroup.get('first_name')?.touched">
-            Campo obrigatório
-          </mat-error>
-        </mat-form-field>
-
-        <mat-form-field>
-            <mat-label>Sobrenome</mat-label>
-            <input matInput type="text" formControlName="last_name">
-            <mat-error *ngIf="formGroup.get('last_name')?.invalid && formGroup.get('last_name')?.touched">
-              Campo obrigatório
-            </mat-error>
+        <h4>Crie sua conta</h4>
+        <div class="form-row">
+          <mat-form-field>
+            <mat-label>Tipo de usuário</mat-label>
+            <mat-select formControlName="user_type">
+              <mat-option [value]="'PAC'">Paciente</mat-option>
+              <mat-option [value]="'FIS'">Fisioterapeuta</mat-option>
+            </mat-select>
           </mat-form-field>
-        
-        <mat-form-field>
-          <mat-label>Data de nascimento</mat-label>
-          <input matInput type="data_nascimento" formControlName="data_nascimento">
-          <mat-error *ngIf="formGroup.get('data_nascimento')?.invalid && formGroup.get('data_nascimento')?.touched">
-            Campo obrigatório
-          </mat-error>
-        </mat-form-field>
+        </div>
+  
+        <div class="form-row">
+            <mat-form-field>
+                <mat-label>Nome</mat-label>
+                <input matInput type="text" formControlName="first_name">
+                <mat-error *ngIf="formGroup.get('first_name')?.invalid && formGroup.get('first_name')?.touched">
+                  Campo obrigatório
+                </mat-error>
+                </mat-form-field>
+                
+                <mat-form-field>
+                <mat-label>Sobrenome</mat-label>
+                <input matInput type="text" formControlName="last_name">
+                <mat-error *ngIf="formGroup.get('last_name')?.invalid && formGroup.get('last_name')?.touched">
+                  Campo obrigatório
+                </mat-error>
+              </mat-form-field>
+        </div>
 
-        <mat-form-field>
+          <div class="form-row">
+            <mat-form-field>
+                <mat-label>Data de nascimento</mat-label>
+                <input matInput type="date" formControlName="data_nascimento">
+                <mat-error *ngIf="formGroup.get('data_nascimento')?.invalid && formGroup.get('data_nascimento')?.touched">
+                  Campo obrigatório
+                </mat-error>
+              </mat-form-field>
+    
+            <mat-form-field>
+                <mat-label>Sexo</mat-label>
+                <mat-select formControlName="sexo">
+                  <mat-option value="M">Masculino</mat-option>
+                  <mat-option value="F">Feminino</mat-option>
+                  <mat-option value="O">Outros</mat-option>
+                </mat-select>
+                <mat-error *ngIf="formGroup.get('sexo')?.invalid && formGroup.get('sexo')?.touched">
+                    Campo obrigatório
+                  </mat-error>
+              </mat-form-field>
+          </div>
+  
+        <div class="form-row">
+          <mat-form-field>
             <mat-label>CPF</mat-label>
-            <input matInput type="cpf" formControlName="cpf">
+            <input matInput type="text" formControlName="cpf">
             <mat-error *ngIf="formGroup.get('cpf')?.invalid && formGroup.get('cpf')?.touched">
               Campo obrigatório
             </mat-error>
           </mat-form-field>
-
+  
           <mat-form-field>
             <mat-label>RG</mat-label>
-            <input matInput type="rg" formControlName="rg">
+            <input matInput type="text" formControlName="rg">
             <mat-error *ngIf="formGroup.get('rg')?.invalid && formGroup.get('rg')?.touched">
               Campo obrigatório
             </mat-error>
           </mat-form-field>
+        </div>
+  
+        <div class="form-row">
+          <mat-form-field>
+            <mat-label>Telefone</mat-label>
+            <input matInput type="text" formControlName="telefone">
+            <mat-error *ngIf="formGroup.get('telefone')?.invalid && formGroup.get('telefone')?.touched">
+              Campo obrigatório
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-row">
+            <mat-form-field>
+              <mat-label>Rua</mat-label>
+              <input matInput type="text" formControlName="rua">
+              <mat-error *ngIf="formGroup.get('rua')?.invalid && formGroup.get('rua')?.touched">
+                Campo obrigatório
+              </mat-error>
+            </mat-form-field>
+    
+            <mat-form-field>
+              <mat-label>Número</mat-label>
+              <input matInput type="text" formControlName="numero">
+              <mat-error *ngIf="formGroup.get('numero')?.invalid && formGroup.get('numero')?.touched">
+                Campo obrigatório
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="form-row">
+            <mat-form-field>
+              <mat-label>Bairro</mat-label>
+              <input matInput type="text" formControlName="bairro">
+              <mat-error *ngIf="formGroup.get('bairro')?.invalid && formGroup.get('bairro')?.touched">
+                Campo obrigatório
+              </mat-error>
+            </mat-form-field>
+    
+            <mat-form-field>
+              <mat-label>CEP</mat-label>
+              <input matInput type="text" formControlName="cep">
+              <mat-error *ngIf="formGroup.get('cep')?.invalid && formGroup.get('cep')?.touched">
+                Campo obrigatório
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+        <div class="form-row" *ngIf="formGroup.get('user_type')?.value === 'FIS'">
+            <mat-form-field>
+                <mat-label>Crefito</mat-label>
+                <input matInput type="text" formControlName="registro_profissional">
+            </mat-form-field>
+        </div>
+
+        <div class="curriculo" *ngIf="formGroup.get('user_type')?.value === 'FIS'">
+            <p>Currículo:</p>
+            <label for="curriculo" class="custom-file-label">Carregar arquivo</label>
+            <input id="curriculo" type="file" (change)="onFileChange($event)" class="custom-file-input" accept=".pdf,.doc,.docx" />
+            
+            <span class="file-name" *ngIf="selectedFile">{{ selectedFile.name }}</span>
+          </div>
+
+        <div class="form-row">
+            <mat-form-field>
+              <mat-label>Email</mat-label>
+              <input matInput type="email" formControlName="email">
+              <mat-error *ngIf="formGroup.get('email')?.invalid && formGroup.get('email')?.touched">
+                Campo obrigatório e deve ser um email válido
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Senha</mat-label>
+                <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="password">
+                <button mat-icon-button matSuffix (click)="togglePasswordVisibility()" type="button">
+                  <mat-icon>{{ hidePassword ? 'visibility' : 'visibility_off' }}</mat-icon>
+                </button>
+                <mat-error *ngIf="formGroup.get('password')?.invalid && formGroup.get('password')?.touched">
+                  Campo obrigatório
+                </mat-error>
+              </mat-form-field>
+          </div>
         
         <section class="buttons">
-          <button mat-raised-button disabled [disabled]="formGroup.invalid" (click)="salvar()">Salvar</button>
+          <button mat-raised-button class="btn-custom" (click)="salvar()">Cancelar</button>
+          <button mat-raised-button class="btn-custom" (click)="salvar()">Cadastrar</button>
         </section>
       </form>
     </mat-card>
