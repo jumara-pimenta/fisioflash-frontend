@@ -1,27 +1,52 @@
-# FisioflashFrontend
+# FISIOFLASH FRONT-END 💻
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.8.
+Este repositório contém as informações necessárias para facilitar a instalação e utilização do front-end do sistema no seu ambiente de desenvolvimento. 
 
-## Development server
+## 1. Sobre o projeto
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Aplicação web para uma clínica de fisioterapia domiciliar chamada FisioFlash. Inclui páginas para cadastro de usuários, login, agendamento e informações sobre os serviços oferecidos pela clínica.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 2. Principais tecnologias e ferramentas utilizadas e necessárias para o funcionamento do projeto ⚙📲
 
-## Build
+- Angular, Angular Material e TypeScript.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 3. Instruções 📚 
+ 
+### Clonando o repositório do projeto
 
-## Running unit tests
+  - git clone <endereço-do-repositório-do-github>
+  - Abrir a pasta clonada
+ 
+## 4. Comandos básicos para utilização e execução do projeto
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Para usar os comandos abaixo é necessário abrir o terminal de comando e navegar até a pasta do projeto.
 
-## Running end-to-end tests
+Abra a pasta do projeto com o terminal de comando:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+`
+cd nome-do-repositorio
+`
 
-## Further help
+Executar o comando abaixo para instalar as dependências do projeto:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+`
+npm install
+`
+
+Executar o comando abaixo para iniciar o projeto:
+
+`
+ng serve
+`
+
+Para baixar atualizações do projeto (fazer o git pull, iniciar o projeto com as novas atualizações):
+
+`
+$ git pull
+`
+
+-------------------------------------------------------------------------------------------------------------------
+  
+
+  
