@@ -1,7 +1,7 @@
 <div class="container">
   <mat-card class="card">
     <form [formGroup]="formGroup" class="login-form">
-      <p>Entre</p>
+      <p>Login</p>
       <mat-form-field>
         <mat-label>Email</mat-label>
         <input matInput type="text" formControlName="email">
@@ -23,8 +23,8 @@
       </section>
     </form>
 
-    <p class="redirect-message">
+    <h1 class="redirect-message">
       Não é cadastrado? <a routerLink="/cadastro">Clique aqui</a>
-    </p>
+    </h1>
   </mat-card>
 </div>

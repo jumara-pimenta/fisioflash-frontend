@@ -16,12 +16,29 @@
   .section {
     flex: 1; 
   }
+
+  .section ul {
+    list-style: none;
+  }
+
+  .section h4 {
+    font-weight: 500;
+    padding-left: 37px;
+  }
+
+  .funciona {
+    margin-left: 80px;
+  }
   
   .container mat-card-title {
     color: #40aab2;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     font-weight: bold;
     margin-bottom: 5px;
+  }
+
+  .container h5 {
+    margin-top: 10px;
   }
   
   .mat-card-content {
@@ -31,6 +48,7 @@
   .button {
     background-color: #40aab2;
     color: #fff;
+    margin-top: 10px;
   }
 
   .button:hover {

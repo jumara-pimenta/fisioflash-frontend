@@ -21,12 +21,16 @@
     width: 100%;
     text-align: center;
   }
+
+  .footer span {
+    font-size: 16px;
+  }
   
   .spacer {
     flex: 1 1 auto;
   }
   
   .mat-toolbar {
-    background-color: rgba(156, 209, 223, 0.8); /* Torna a barra levemente transparente */
+    background-color: rgba(156, 209, 223, 0.8); 
   }
   

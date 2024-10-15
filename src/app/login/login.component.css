@@ -29,8 +29,9 @@
 
 .redirect-message {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 5px;
   font-size: 14px;
+  font-weight: 500;
 }
 
 .redirect-message a {
@@ -41,4 +42,10 @@
 
 .redirect-message a:hover {
   color: #d6e3e4;
+}
+
+p {
+  font-size: 25px;
+  font-weight: 500;
+  margin-left: 70px;
 }
