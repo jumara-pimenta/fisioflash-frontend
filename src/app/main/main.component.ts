@@ -6,6 +6,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-main',
@@ -16,7 +17,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatToolbarModule,
     MatButtonModule,
     CommonModule,
-    RouterModule
+    RouterModule,
+    MatIcon
   ],
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css'],

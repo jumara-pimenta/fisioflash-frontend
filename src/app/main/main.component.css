@@ -21,14 +21,24 @@
     list-style: none;
   }
 
+  ul li {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+  }
+
   .section h4 {
     font-weight: 500;
     padding-left: 37px;
   }
 
-  .funciona {
-    margin-left: 80px;
+  .servicos {
+    margin-left: 85px;
   }
+
+  mat-icon {
+    margin-right: 8px;
+}
   
   .container mat-card-title {
     color: #40aab2;

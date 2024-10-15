@@ -18,7 +18,7 @@
 .login-form {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 10px;
 }
 
 .buttons {
@@ -27,11 +27,19 @@
   justify-content: center;
 }
 
+.buttons button {
+  color:#000;
+  background-color: #fff;
+  transition: color 0.3s ease;
+}
+
+.buttons button:hover {
+  background-color: #388e99;
+}
+
 .redirect-message {
   text-align: center;
-  margin-top: 5px;
   font-size: 14px;
-  font-weight: 500;
 }
 
 .redirect-message a {

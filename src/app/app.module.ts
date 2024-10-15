@@ -10,7 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    MatButtonModule
+    MatButtonModule, 
   ],
   providers: [],
 

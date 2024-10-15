@@ -124,7 +124,7 @@
         </div>
 
         <div class="curriculo" *ngIf="formGroup.get('user_type')?.value === 'FIS'">
-            <p>Currículo:</p>
+            <span>Currículo:</span>
             <label for="curriculo" class="custom-file-label">Carregar arquivo</label>
             <input id="curriculo" type="file" (change)="onFileChange($event)" class="custom-file-input" accept=".pdf,.doc,.docx" />
             
