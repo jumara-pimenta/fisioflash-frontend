@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
             duration: 3000,
           });
 
-          this.router.navigate(['cadastro']);
+          this.router.navigate(['servico']);
         },
         (error) => {
           this.snackBar.open('Erro no login: Email ou senha inválidos', 'Fechar', {

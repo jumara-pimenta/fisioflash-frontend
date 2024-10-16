@@ -1,13 +1,9 @@
 <div class="container">
-  <mat-card class="card">
-      <mat-card-title><p>Serviços</p></mat-card-title>
-    <mat-card-content>
-      <button mat-raised-button>Massoterapia</button>
-      <button mat-raised-button>Geriatria</button>
-      <button mat-raised-button>Traumato-ortopedia</button>
-      <button mat-raised-button>Acupuntura</button>
-      <button mat-raised-button>Quiropraxia</button>
-      <button mat-raised-button>Neurofisioterapia</button>
+  <mat-card class="card" >
+    <mat-card-title><p>Serviços</p></mat-card-title>
+    <mat-card-content *ngFor="let servico of servicos" (click)="selecionarServico(servico.id)" style="cursor: pointer;">
+      <button mat-card-button mat-raised-button>{{ servico.especialidade }}
+      </button>
     </mat-card-content>
   </mat-card>
 </div>

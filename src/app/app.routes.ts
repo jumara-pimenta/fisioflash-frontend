@@ -17,10 +17,18 @@ export const routes: Routes = [
     path: 'servico',
     loadComponent: () => import('./servico/servico.component').then(mod => mod.ServicoComponent),
   },
+  {
+    path: 'fisioterapeutas',
+    loadComponent: () => import('./fisioterapeutas/fisioterapeutas.component').then(mod => mod.FisioterapeutasComponent),
+  },
+  {
+    path: 'caso-clinico',
+    loadComponent: () => import('./caso-clinico/caso-clinico.component').then(mod => mod.CasoClinicoComponent),
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule {

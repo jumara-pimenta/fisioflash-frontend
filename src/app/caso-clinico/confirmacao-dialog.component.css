@@ -1,0 +1,48 @@
+.dialog-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .dialog-content {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    padding: 0 2rem; /* Maior padding para espaço ao conteúdo */
+  }
+  
+  .email {
+    font-size: 1.3rem;
+    color: #40aab2;
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+  
+  .dialog-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  .dialog-button {
+    background-color: #40aab2;
+    color: white;
+    padding: 0.8rem 2rem; /* Botão maior para melhor usabilidade */
+    font-size: 1.1rem;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dialog-button:hover {
+    background-color: #388e99;
+  }
+  
+  .dialog-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(64, 170, 178, 0.5);
+  }
+  

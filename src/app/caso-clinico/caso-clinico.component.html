@@ -1,0 +1,18 @@
+<div class="caso-clinico-container">
+  <mat-card class="caso-clinico-card">
+    <p class="titulo">Descreva abaixo seu caso clínico</p>
+    <form [formGroup]="formGroup" (ngSubmit)="enviarCasoClinico()">
+      <mat-form-field appearance="fill" class="descricao-field">
+        <mat-label>Descrição do caso</mat-label>
+        <textarea matInput formControlName="descricao" rows="6"></textarea>
+        <mat-error *ngIf="formGroup.get('descricao')?.invalid && formGroup.get('descricao')?.touched">
+          Campo obrigatório
+        </mat-error>
+      </mat-form-field>
+      <div class="botao-enviar">
+        <button class="button" type="submit">Enviar</button>
+      </div>
+    </form>
+  </mat-card>
+</div>
+
