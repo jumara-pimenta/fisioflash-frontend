@@ -49,11 +49,17 @@ export class LoginComponent implements OnInit {
       this.authService.login(email, password).subscribe(
         (response) => {
           localStorage.setItem('token', response.token);
+          localStorage.setItem('user_type', response.user_type);
           this.snackBar.open('Login realizado com sucesso!', 'Fechar', {
             duration: 3000,
           });
 
-          this.router.navigate(['servico']);
+          const userType = response.user_type; // Verifica o tipo de usuário
+          if (userType === 'FIS') {
+            this.router.navigate(['dashboard-fisioterapeuta']);
+          } else {
+            this.router.navigate(['servico']); 
+          }
         },
         (error) => {
           this.snackBar.open('Erro no login: Email ou senha inválidos', 'Fechar', {

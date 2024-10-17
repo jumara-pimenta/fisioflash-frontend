@@ -1,0 +1,35 @@
+<div class="container">
+    <mat-card class="card">
+      <h3>Gerenciamento de Solicitações</h3>
+      <table mat-table [dataSource]="solicitacoes" class="mat-elevation-z8">
+        <ng-container matColumnDef="paciente">
+          <th mat-header-cell *matHeaderCellDef> Nome do Paciente </th>
+          <td mat-cell *matCellDef="let solicitacao"> {{ solicitacao.paciente_nome }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="data_solicitacao">
+          <th mat-header-cell *matHeaderCellDef> Data da Solicitação </th>
+          <td mat-cell *matCellDef="let solicitacao"> {{ solicitacao.data_solicitacao | date }} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="caso_clinico">
+          <th mat-header-cell *matHeaderCellDef> Caso Clínico </th>
+          <td mat-cell *matCellDef="let solicitacao"> {{ solicitacao.caso_clinico }} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="servico">
+          <th mat-header-cell *matHeaderCellDef> Serviço Solicitado </th>
+          <td mat-cell *matCellDef="let solicitacao"> {{ solicitacao.servico }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef> Status </th>
+            <td mat-cell *matCellDef="let solicitacao"> {{ solicitacao.status }} </td>
+          </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </mat-card>
+  </div>
+  

@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {MainComponent} from './main/main.component';
+import { AuthGuard } from './auth.guard';
 
 export const routes: Routes = [
   {path: '', component: MainComponent},
@@ -24,6 +25,11 @@ export const routes: Routes = [
   {
     path: 'caso-clinico',
     loadComponent: () => import('./caso-clinico/caso-clinico.component').then(mod => mod.CasoClinicoComponent),
+  },
+  {
+    path: 'dashboard-fisioterapeuta',
+    loadComponent: () => import('./dashboard-fisioterapeuta/dashboard-fisioterapeuta.component').then(mod => mod.DashboardFisioterapeutaComponent),
+    // canActivate: [AuthGuard],
   },
 ];
 

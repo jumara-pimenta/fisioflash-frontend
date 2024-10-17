@@ -58,6 +58,7 @@ export class CadastroComponent implements OnInit {
       cep: ['', [Validators.required]],
       curriculo: [''],  
       registro_profissional: [''],
+      minibio: [''],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]], 
     });
@@ -98,6 +99,9 @@ export class CadastroComponent implements OnInit {
     formData.append('cep', this.formGroup.get('cep')?.value);
     if (this.formGroup.get('user_type')?.value === 'FIS') {
       formData.append('registro_profissional', this.formGroup.get('registro_profissional')?.value);
+    }
+    if (this.formGroup.get('user_type')?.value === 'FIS') {
+      formData.append('minibio', this.formGroup.get('minibio')?.value);
     }
     formData.append('email', this.formGroup.get('email')?.value);
     formData.append('password', this.formGroup.get('password')?.value);

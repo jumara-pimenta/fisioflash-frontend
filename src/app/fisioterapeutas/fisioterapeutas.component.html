@@ -4,11 +4,11 @@
       <mat-card-header>
         <div mat-card-avatar class="fisioterapeuta-avatar"></div>
         <mat-card-title>{{ fisioterapeuta.fisioterapeuta.first_name }} {{ fisioterapeuta.fisioterapeuta.last_name }}</mat-card-title>
-        <mat-card-subtitle>{{ fisioterapeuta.servico.especialidade }}</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
         <p><strong>Email:</strong> {{ fisioterapeuta.fisioterapeuta.email }}</p>
         <p><strong>Crefito:</strong> {{ fisioterapeuta.fisioterapeuta.registro_profissional || 'Não disponível' }}</p>
+        <p><strong>Descrição profissional:</strong> {{ fisioterapeuta.fisioterapeuta.minibio || 'Não disponível' }}</p>
       </mat-card-content>
       <mat-card-actions>
         <button class="button" mat-raised-button (click)="escolherFisioterapeuta(fisioterapeuta.fisioterapeuta.id)">Escolher Fisioterapeuta</button>

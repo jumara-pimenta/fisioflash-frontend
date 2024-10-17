@@ -7,6 +7,7 @@ import { HttpHeaders } from '@angular/common/http';
 interface AuthResponse {
   token: string;
   user_id: number;
+  user_type: string;
 }
 
 @Injectable({
@@ -36,6 +37,10 @@ export class AuthService {
     );
   }
 
+  getUserType(): string | null {
+    return localStorage.getItem('user_type');
+  }
+
   registerUser(formData: FormData): Observable<any> {
     return this.http.post(this.cadastroUrl, formData);
   }
@@ -56,9 +61,19 @@ export class AuthService {
     return this.http.post(`${this.apiUrl}/caso_clinico/`, data, { headers });
   }
 
+  listarCasoClinico(): Observable<any> {
+    const headers = this.getHeaders();
+    return this.http.get<any[]>(`${this.apiUrl}/caso_clinico/`, { headers });
+  }
+
   getDetalhesFisioterapeuta(fisioterapeutaId: number): Observable<any> {
     const headers = this.getHeaders();
     return this.http.get(`${this.apiUrl}/usuario/${fisioterapeutaId}/`, { headers });
+  }
+
+  getSolicitacoes(): Observable<any>  {
+    const headers = this.getHeaders();
+    return this.http.get<any[]>(`${this.apiUrl}/solicitacao_atendimento/`, { headers });
   }
 
 }

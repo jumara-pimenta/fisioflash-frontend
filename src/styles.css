@@ -11,9 +11,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body {
-    background-image: url('assets/images/fisio.jpg'); 
+    background-image: url('assets/images/fundo.jpg'); 
     background-size: cover;  
-    background-position: center;  
     background-attachment: fixed;
     background-repeat: no-repeat; 
     min-height: 100vh; 

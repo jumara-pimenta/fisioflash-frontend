@@ -131,6 +131,13 @@
             <span class="file-name" *ngIf="selectedFile">{{ selectedFile.name }}</span>
           </div>
 
+          <div class="form-row" *ngIf="formGroup.get('user_type')?.value === 'FIS'">
+            <mat-form-field appearance="fill" class="descricao-minibio">
+              <mat-label>Breve descrição profissional</mat-label>
+                <textarea matInput formControlName="minibio" rows="4"></textarea>
+            </mat-form-field>
+        </div>
+
         <div class="form-row">
             <mat-form-field>
               <mat-label>Email</mat-label>
