@@ -18,7 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   templateUrl: './servico.component.html',
   styleUrl: './servico.component.css',
-  providers: [AuthService] 
+  // providers: [AuthService] 
 })
 export class ServicoComponent implements OnInit {
 

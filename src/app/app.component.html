@@ -4,7 +4,14 @@
   <nav>
     <a mat-button routerLink="/" routerLinkActive="active">Início</a>
     <a mat-button routerLink="/cadastro" routerLinkActive="active">Cadastro</a>
-    <a mat-button routerLink="/servico" routerLinkActive="active">Serviço</a>
+
+    <!-- Condicional para Paciente -->
+    <a *ngIf="isPaciente()" mat-button routerLink="/servico" routerLinkActive="active">Serviço</a>
+    <a *ngIf="isPaciente()" mat-button routerLink="/dashboard-paciente" routerLinkActive="active">Área do usuário</a>
+
+    <!-- Condicional para Fisioterapeuta -->
+    <a *ngIf="isFisioterapeuta()" mat-button routerLink="/dashboard-fisioterapeuta" routerLinkActive="active">Área do usuário</a>
+
     <a mat-button routerLink="/login" routerLinkActive="active">Login</a>
   </nav>
 </mat-toolbar>

@@ -29,12 +29,12 @@ export const routes: Routes = [
   {
     path: 'dashboard-fisioterapeuta',
     loadComponent: () => import('./dashboard-fisioterapeuta/dashboard-fisioterapeuta.component').then(mod => mod.DashboardFisioterapeutaComponent),
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
   {
     path: 'dashboard-paciente',
     loadComponent: () => import('./dashboard-paciente/dashboard-paciente.component').then(mod => mod.DashboardPacienteComponent),
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
 ];
 

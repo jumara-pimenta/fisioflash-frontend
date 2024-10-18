@@ -11,16 +11,16 @@ export class AuthGuard implements CanActivate {
 
   canActivate(): boolean {
     const userType = this.authService.getUserType();
+    console.log('User type:', userType);
 
-    // Se for um fisioterapeuta, permitir acesso ao dashboard
+    // Se for um fisioterapeuta, permitir acesso ao dashboard de fisioterapeuta
     if (userType === 'FIS') {
       return true;
     }
 
-    // Se for um paciente, redirecionar para a tela de serviços
+    // Se for um paciente, permitir acesso ao dashboard de paciente
     if (userType === 'PAC') {
-      this.router.navigate(['servicos']); 
-      return false;
+      return true;
     }
 
     // Se o tipo de usuário não for reconhecido, redirecionar para login

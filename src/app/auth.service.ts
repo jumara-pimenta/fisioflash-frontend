@@ -33,6 +33,7 @@ export class AuthService {
         tap(response => {
           localStorage.setItem('token', response.token);  
           localStorage.setItem('user_id', response.user_id.toString());
+          localStorage.setItem('user_type', response.user_type);
       })
     );
   }
@@ -74,6 +75,11 @@ export class AuthService {
   getSolicitacoes(): Observable<any>  {
     const headers = this.getHeaders();
     return this.http.get<any[]>(`${this.apiUrl}/solicitacao_atendimento/`, { headers });
+  }
+
+  atualizarSolicitacao(solicitacaoId: number, statusObj: { status: string }): Observable<any> {
+    const headers = this.getHeaders();
+    return this.http.patch(`${this.apiUrl}/solicitacao_atendimento/${solicitacaoId}/`, statusObj, { headers });
   }
 
 }
