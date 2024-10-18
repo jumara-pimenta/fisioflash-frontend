@@ -31,10 +31,15 @@ export const routes: Routes = [
     loadComponent: () => import('./dashboard-fisioterapeuta/dashboard-fisioterapeuta.component').then(mod => mod.DashboardFisioterapeutaComponent),
     // canActivate: [AuthGuard],
   },
+  {
+    path: 'dashboard-paciente',
+    loadComponent: () => import('./dashboard-paciente/dashboard-paciente.component').then(mod => mod.DashboardPacienteComponent),
+    // canActivate: [AuthGuard],
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule {
