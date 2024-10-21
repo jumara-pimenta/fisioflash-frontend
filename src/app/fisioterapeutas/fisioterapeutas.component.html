@@ -11,8 +11,7 @@
         <p><strong>Descrição profissional:</strong> {{ fisioterapeuta.fisioterapeuta.minibio || 'Não disponível' }}</p>
       </mat-card-content>
       <mat-card-actions>
-        <button class="button" mat-raised-button (click)="escolherFisioterapeuta(fisioterapeuta.fisioterapeuta.id)">Escolher Fisioterapeuta</button>
-      </mat-card-actions>
+        <button class="button" mat-raised-button (click)="escolherFisioterapeuta(fisioterapeuta.id, fisioterapeuta.servico.id)">Escolher Fisioterapeuta</button>      </mat-card-actions>
     </mat-card>
   </div>
 </div>

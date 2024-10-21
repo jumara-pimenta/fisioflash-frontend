@@ -34,6 +34,7 @@ export class CasoClinicoComponent implements OnInit {
   formGroup!: FormGroup;
   fisioterapeutaId!: number;
   servicoId!: number;
+  servicoFisioterapeutaId!: number;
 
   constructor(
     private route: ActivatedRoute,
@@ -44,35 +45,37 @@ export class CasoClinicoComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.fisioterapeutaId = +this.route.snapshot.queryParams['fisioterapeuta'];
-    this.servicoId = +this.route.snapshot.queryParams['servico'];
-
-    const pacienteId = localStorage.getItem('user_id');
-    if (!pacienteId) {
-      console.error('Erro: O ID do paciente não foi encontrado no localStorage.');
-    }
-
-    this.formGroup = this.formBuilder.group({
-      descricao: ['', [Validators.required]]
+    // Captura os parâmetros de query usando um 'subscribe'
+    this.route.queryParams.subscribe(params => {
+      this.fisioterapeutaId = +params['fisioterapeuta'];
+      this.servicoId = +params['servico'];
+      this.servicoFisioterapeutaId = +params['servico_fisioterapeuta'];
     });
+
+  const pacienteId = localStorage.getItem('user_id');
+  if (!pacienteId) {
+    console.error('Erro: O ID do paciente não foi encontrado no localStorage.');
+  }
+
+  this.formGroup = this.formBuilder.group({
+    descricao: ['', [Validators.required]]
+  });
   }
 
   enviarCasoClinico() {
     const casoClinico = {
       descricao: this.formGroup.get('descricao')?.value,
       paciente: localStorage.getItem('user_id'),
-      fisioterapeuta: this.fisioterapeutaId,
-      servico: this.servicoId
+      servico_fisioterapeuta_id: this.servicoFisioterapeutaId
     };
-  
-    console.log('Enviando caso clínico:', casoClinico);
-  
+    
     this.authService.criarCasoClinico(casoClinico).subscribe(response => {
       const dialogRef = this.dialog.open(ConfirmacaoDialog, {
         width: '550px',
-        disableClose: true // Impede o fechamento ao clicar fora do diálogo
+        disableClose: true
       }).afterClosed().subscribe(() => {
-        this.formGroup.reset();  // Limpa o formulário após fechar o diálogo
+        this.formGroup.reset();
+        this.router.navigate(['/dashboard-paciente']);
       });
     }, error => {
       console.error('Erro ao criar caso clínico:', error);

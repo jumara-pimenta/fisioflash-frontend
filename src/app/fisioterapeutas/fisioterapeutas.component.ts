@@ -39,17 +39,13 @@ export class FisioterapeutasComponent {
 
   carregarFisioterapeutas() {
     this.authService.getFisioterapeutasPorServico(this.servicoId).subscribe(
-      (data: any) => {
-        console.log('Resposta da API:', data);
-  
+      (data: any) => {  
         // Verifica se a resposta é um array. Caso contrário, transforma em array.
         if (Array.isArray(data)) {
           this.fisioterapeutasDetalhes = data;  // Se for array, armazena diretamente
         } else if (data) {
           this.fisioterapeutasDetalhes = [data];  // Se for objeto, transforma em array
         }
-  
-        console.log('Fisioterapeutas Detalhes:', this.fisioterapeutasDetalhes);
       },
       (error) => {
         console.error('Erro ao carregar fisioterapeutas:', error);
@@ -57,7 +53,7 @@ export class FisioterapeutasComponent {
     );
   }
 
-  escolherFisioterapeuta(fisioterapeutaId: number) {
-    this.router.navigate(['caso-clinico'], { queryParams: { fisioterapeuta: fisioterapeutaId, servico: this.servicoId } });
+  escolherFisioterapeuta(fisioterapeutaId: number, servicoFisioterapeutaId: number) {
+    this.router.navigate(['caso-clinico'], { queryParams: { fisioterapeuta: fisioterapeutaId, servico: this.servicoId, servico_fisioterapeuta: servicoFisioterapeutaId } });
   }
 }

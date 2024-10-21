@@ -48,7 +48,6 @@ export class AuthService {
 
   getServicos(): Observable<any> {
     const headers = this.getHeaders();
-    console.log('Headers:', headers); 
     return this.http.get(`${this.apiUrl}/servico/`, { headers });
   }
 

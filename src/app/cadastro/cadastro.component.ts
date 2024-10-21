@@ -68,7 +68,6 @@ export class CadastroComponent implements OnInit {
     const file = event.target.files[0];  // Captura o primeiro arquivo selecionado
     if (file) {
       this.selectedFile = file;  // Armazena o arquivo selecionado
-      console.log('Arquivo selecionado:', this.selectedFile);
     }
   }
 

@@ -41,12 +41,10 @@ export class DashboardFisioterapeutaComponent implements OnInit {
   atualizarStatus(solicitacao: any): void {
     const updatedStatus = { status: solicitacao.status };
     this.authService.atualizarSolicitacao(solicitacao.id, updatedStatus).subscribe(() => {
-      console.log('Status atualizado com sucesso!');
       this.snackBar.open('Status atualizado com sucesso!', 'Fechar', {
         duration: 3000,
       });
     }, error => {
-      console.error('Erro ao atualizar status:', error);
       this.snackBar.open('Erro ao atualizar status', 'Fechar', {
         duration: 3000,
       });
