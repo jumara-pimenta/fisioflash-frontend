@@ -4,12 +4,12 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { AuthService } from './auth.service';
 import { HttpClientModule } from '@angular/common/http';
-import { CommonModule } from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HttpClientModule, RouterOutlet, MatToolbarModule, MatButtonModule,  RouterModule, CommonModule],
+  imports: [HttpClientModule, RouterOutlet, MatToolbarModule, MatButtonModule, RouterModule, CommonModule, NgOptimizedImage],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   // providers: [AuthService]
