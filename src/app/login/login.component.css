@@ -13,6 +13,8 @@
   max-width: 500px;
   padding: 2rem;
   background-color: #40aab2;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .login-form {
@@ -28,7 +30,7 @@
 }
 
 .buttons button {
-  color:#000;
+  color: #000;
   background-color: #fff;
   transition: color 0.3s ease;
 }
@@ -40,6 +42,7 @@
 .redirect-message {
   text-align: center;
   font-size: 14px;
+  margin-top: 20px;
 }
 
 .redirect-message a {
@@ -55,5 +58,43 @@
 p {
   font-size: 25px;
   font-weight: 500;
-  margin-left: 70px;
+  text-align: center; 
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 1.5rem;
+    max-width: 90%; 
+  }
+
+  .buttons button {
+    padding: 8px 16px; 
+  }
+
+  p {
+    font-size: 22px; 
+
+  .redirect-message {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 1rem;
+    max-width: 100%; 
+  }
+
+  .buttons button {
+    padding: 6px 12px; 
+  }
+
+  p {
+    font-size: 20px; 
+  }
+
+  .redirect-message {
+    font-size: 12px;
+  }
+}
 }

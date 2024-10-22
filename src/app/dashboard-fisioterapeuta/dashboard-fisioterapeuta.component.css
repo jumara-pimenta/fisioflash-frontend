@@ -1,39 +1,154 @@
+/* Estilos principais */
 .container {
-    height: 90vh;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(224, 232, 235, 0.8);
-  }
-  
-  p {
-    font-size: 25px;
-    font-weight: 700;
-    margin-left: 25px;
-    padding-top: 30px;
-    color: #333;
-  }
-  
+  height: 90vh;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(224, 232, 235, 0.8);
+  padding: 20px;
+}
+
+p {
+  font-size: 25px;
+  font-weight: 700;
+  margin-left: 25px;
+  padding-top: 30px;
+  color: #333;
+}
+
+/* Ajustes da tabela */
+table {
+  min-width: 100%;
+  margin: 20px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.mat-header-cell, .mat-cell {
+  padding: 5px 10px;
+  font-size: 16px;
+}
+
+.status-container {
+  display: flex;
+  align-items: center;
+}
+
+.select {
+  height: 36px;
+  border-radius: 5px;
+}
+
+button {
+  margin-left: 10px;
+  background-color: #40aab2;
+  border-radius: 5px;
+  color: white;
+}
+
+/* Tabela em telas menores (tablets) */
+@media (max-width: 1024px) {
   table {
-    min-width: 98%;
-    margin: 20px;
+      min-width: 100%;
+      margin: 10px;
   }
-  
+
   .mat-header-cell, .mat-cell {
-    padding: 5px;
+      font-size: 14px;
+      padding: 8px;
+  }
+
+  p {
+      font-size: 22px;
+  }
+}
+
+/* Responsividade para dispositivos com largura menor que 768px */
+@media (max-width: 768px) {
+  table {
+      display: block; 
+      width: 100%;
+      overflow-x: auto; 
+      border-spacing: 0 10px;
+  }
+
+  .mat-header-cell, .mat-cell {
+      display: block; 
+      width: 100%; 
+      padding: 8px;
+      box-sizing: border-box;
+  }
+
+  .mat-header-cell {
+      font-size: 14px;
+      font-weight: bold;
+      background-color: #40aab2;
+      color: white;
   }
 
   .status-container {
-    display: flex;
-    align-items: center;
+      flex-direction: column;
+      align-items: flex-start;
   }
-  
+
   .select {
-    height: 36px;
-    border-radius: 5px;
+      width: 100%;
+      margin-bottom: 10px;
   }
-  
+
   button {
-    margin-left: 10px;
-    background-color: #40aab2;
-    border-radius: 5px;
+      width: 100%;
+      margin-left: 0;
   }
+
+  p {
+      font-size: 20px;
+  }
+}
+
+/* Melhorando a visualização em dispositivos móveis (menores que 480px) */
+@media (max-width: 480px) {
+  table {
+      display: block;
+      width: 100%;
+      overflow-x: auto;
+  }
+
+  .mat-header-cell, .mat-cell {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      font-size: 14px;
+      border-bottom: 1px solid #ddd; 
+  }
+
+  .mat-header-cell {
+      font-weight: bold;
+  }
+
+  /* Exibe o conteúdo da célula em formato de lista */
+  .mat-cell:before {
+      content: attr(data-label);
+      font-weight: bold;
+      margin-right: 10px;
+  }
+
+  .status-container {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .select {
+      width: 100%;
+      margin-bottom: 10px;
+  }
+
+  button {
+      width: 100%;
+      margin-left: 0;
+  }
+
+  p {
+      font-size: 18px;
+      text-align: center;
+  }
+}
