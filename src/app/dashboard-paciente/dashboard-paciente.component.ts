@@ -30,6 +30,7 @@ export class DashboardPacienteComponent implements OnInit {
 
   carregarSolicitacoesPaciente(): void {
     this.authService.getSolicitacoes().subscribe(data => {
+      console.log('Solicitações recebidas:', data);
       this.solicitacoes = data;
     }, error => {
       console.error('Erro ao carregar solicitações:', error);

@@ -17,5 +17,12 @@
 </div>
 
 <ng-template #noDataTemplate>
-  <p class="no-data-message">Nenhum fisioterapeuta encontrado para este serviço.</p>
+  <mat-card class="no-data-card">
+    <mat-card-header>
+      <mat-card-title>Nenhum fisioterapeuta encontrado</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p class="no-data-message">Atualmente, não há fisioterapeutas disponíveis para este serviço.</p>
+    </mat-card-content>
+  </mat-card>
 </ng-template>

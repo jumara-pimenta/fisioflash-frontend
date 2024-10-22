@@ -17,7 +17,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   providers: [AuthService]
 })
 export class DashboardFisioterapeutaComponent implements OnInit {
-  displayedColumns: string[] = ['paciente', 'data_solicitacao', 'caso_clinico', 'servico', 'status'];
+  displayedColumns: string[] = ['paciente', 'data_solicitacao', 'caso_clinico', 'servico', 'telefone', 'status'];
   solicitacoes: any[] = [];
   
   constructor(private authService: AuthService, private snackBar: MatSnackBar) {}
