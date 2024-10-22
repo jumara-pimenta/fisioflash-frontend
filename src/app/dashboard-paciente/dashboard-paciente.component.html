@@ -8,7 +8,7 @@
 
       <ng-container matColumnDef="data_solicitacao">
         <th mat-header-cell *matHeaderCellDef> Data da Solicitação </th>
-        <td mat-cell *matCellDef="let solicitacao"> {{ solicitacao.data_solicitacao | date }} </td>
+        <td mat-cell *matCellDef="let solicitacao"> {{ solicitacao.data_solicitacao | date:'dd/MM/yyyy' }} </td>
       </ng-container>
 
       <ng-container matColumnDef="caso_clinico">
